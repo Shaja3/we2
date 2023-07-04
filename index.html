@@ -1,0 +1,121 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>حاسبة الدرجات</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+  body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+  }
+  header {
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 20px;
+  }
+  h1 {
+   margin: 0;
+  }
+  main {
+   max-width: 600px;
+   margin: 20px auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+  }
+  label {
+   display: block;
+   margin-bottom: 10px;
+  }
+  input[type="number"] {
+   width: 60px;
+  }
+  button {
+   display: block;
+   background-color: #333;
+   color: #fff;
+   border: none;
+   padding: 10px;
+   margin-top: 20px;
+  }
+  button:hover {
+   cursor: pointer;
+   background-color: #444;
+  }
+  #result {
+   font-size: 24px;
+   font-weight: bold;
+   margin-top: 20px;
+  }
+ </style>
+</head>
+<body>
+ <header>
+  <h1>حاسبة الدرجات</h1>
+ </header>
+ <main>
+  <form>
+   <h2>اختبارات التحدث</h2>
+   <label for="test1">الاختبار الأول (10 درجات)</label>
+   <input type="number" id="test1" name="test1" min="0" max="10" required>
+   <label for="test2">الاختبار الثاني (10 درجات)</label>
+   <input type="number" id="test2" name="test2" min="0" max="10" required>
+   <label for="test3">الاختبار الثالث (10 درجات)</label>
+   <input type="number" id="test3" name="test3" min="0" max="10" required>
+   <label for="test4">الاختبار الرابع (10 درجات)</label>
+   <input type="number" id="test4" name="test4" min="0" max="10" required>
+   <label for="test5">الاختبار الخامس (10 درجات)</label>
+   <input type="number" id="test5" name="test5" min="0" max="10" required>
+   <label for="test6">الاختبار السادس (10 درجات)</label>
+   <input type="number" id="test6" name="test6" min="0" max="10" required>
+   <button type="button" onclick="calculateSpeaking()">حساب الدرجات</button>
+   <div id="result1"></div>
+  </form>
+  <form>
+   <h2>مشاريع التحدث</h2>
+   <label for="test7">المشروع الأول (20 درجة)</label>
+   <input type="number" id="test7" name="test7" min="0" max="20" required>
+   <label for="test8">المشروع الثاني (20 درجة)</label>
+   <input type="number" id="test8" name="test8" min="0" max="20" required>
+   <label for="test9">المشروع الثالث (20 درجة)</label>
+   <input type="number" id="test9" name="test9" min="0" max="20" required>
+   <label for="test10">المشروع الرابع (20 درجة)</label>
+   <input type="number" id="test10" name="test10" min="0" max="20" required>
+   <label for="test11">المشروع الخامس (20 درجة)</label>
+   <input type="number" id="test11" name="test11" min="0" max="20" required>
+   <label for="test12">المشروع السادس (20 درجة)</label>
+   <input type="number" id="test12" name="test12" min="0" max="20" required>
+   <button type="button" onclick="calculateProjects()">حساب الدرجات</button>
+   <div id="result2"></div>
+  </form>
+ </main>
+ <script>
+  function calculateSpeaking() {
+   var test1 = parseInt(document.getElementById("test1").value);
+   var test2 = parseInt(document.getElementById("test2").value);
+   var test3 = parseInt(document.getElementById("test3").value);
+   var test4 = parseInt(document.getElementById("test4").value);
+   var test5 = parseInt(document.getElementById("test5").value);
+   var test6 = parseInt(document.getElementById("test6").value);
+   var total = test1 + test2 + test3 + test4 + test5 + test6;
+   var percentage = (total / 60) * 10;
+   document.getElementById("result1").innerHTML = "النتيجة النهائية: " + percentage.toFixed(2) + "/10";
+  }
+
+  function calculateProjects() {
+   var test7 = parseInt(document.getElementById("test7").value);
+   var test8 = parseInt(document.getElementById("test8").value);
+   var test9 = parseInt(document.getElementById("test9").value);
+   var test10 = parseInt(document.getElementById("test10").value);
+   var test11 = parseInt(document.getElementById("test11").value);
+   var test12 = parseInt(document.getElementById("test12").value);
+   var total = test7 + test8 + test9 + test10 + test11 + test12;
+   var percentage = (total / 120) * 30;
+   document.getElementById("result2").innerHTML = "النتيجة النهائية: " + percentage.toFixed(2) + "/30";
+  }
+ </script>
+</body>
+</html>
